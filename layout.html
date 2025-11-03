@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>版面配置 - 網頁設計課程筆記</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 頁首 -->
+        <header class="header">
+            <h1>📀 版面配置技術</h1>
+            <p>學習CSS版面配置的基本方法</p>
+        </header>
+
+        <!-- 導航列 -->
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">課程總覽</a></li>
+                <li><a href="html-basics.html">HTML基礎</a></li>
+                <li><a href="css-basics.html">CSS基礎</a></li>
+                <li><a href="layout.html" class="active">版面配置</a></li>
+                <li><a href="effects.html">動態效果</a></li>
+                <li><a href="examples.html">實作範例</a></li>
+            </ul>
+        </nav>
+
+        <!-- 主內容區 -->
+        <main class="content">
+            <h2>版面配置技術</h2>
+            
+            <h3>1. 區塊置中</h3>
+            <p>水平置中是網頁設計中非常常見的需求。</p>
+            
+            <div class="code-block">
+                <pre>#main {
+  width: 800px;
+  margin: 0 auto; /* 水平置中 */
+}</pre>
+            </div>
+            
+            <div class="info-box">
+                <h4>置中方法說明：</h4>
+                <ul>
+                    <li><code>margin: auto</code> 用於區塊元素水平置中</li>
+                    <li><code>text-align: center</code> 用於文字置中</li>
+                    <li>區塊必須有固定寬度才能使用 <code>margin: auto</code></li>
+                </ul>
+            </div>
+
+            <h3>2. 浮動排版</h3>
+            <p>浮動是創建多欄布局的傳統方法。</p>
+            
+            <div class="code-block">
+                <pre>.item {
+  width: 180px;
+  height: 180px;
+  float: left;
+  margin: 10px;
+}
+
+/* 清除浮動 */
+.clear {
+  clear: both;
+}</pre>
+            </div>
+            
+            <div class="warning-box">
+                <h4>浮動注意事項：</h4>
+                <ul>
+                    <li>浮動元素會脱離正常文檔流</li>
+                    <li>父元素可能失去高度</li>
+                    <li>必須適時清除浮動以避免布局問題</li>
+                </ul>
+            </div>
+
+            <h3>3. 定位技術</h3>
+            <p>CSS定位允許您精確控制元素的位置。</p>
+            
+            <h4>相對定位</h4>
+            <div class="code-block">
+                <pre>#container {
+  position: relative; /* 定位參考點 */
+}</pre>
+            </div>
+            
+            <h4>絕對定位</h4>
+            <div class="code-block">
+                <pre>#element {
+  position: absolute;
+  top: 100px;
+  left: 150px;
+}</pre>
+            </div>
+            
+            <div class="success-box">
+                <h4>定位簡化理解：</h4>
+                <ul>
+                    <li><code>static</code>：預設定位，遵循正常文檔流</li>
+                    <li><code>relative</code>：相對於原位置偏移</li>
+                    <li><code>absolute</code>：相對於最近的定位父元素</li>
+                    <li><code>fixed</code>：相對於瀏覽器視窗</li>
+                </ul>
+            </div>
+
+            <h3>4. 網格佈局範例</h3>
+            <p>使用浮動建立簡單的網格系統。</p>
+            
+            <div class="code-block">
+                <pre>#main {
+  width: 500px;
+  margin: auto;
+  border: medium solid gray;
+  border-radius: 20px;
+}
+
+.item {
+  width: 180px;
+  height: 180px;
+  float: left;
+  margin: 10px;
+  border: thin solid green;
+}
+
+.item img {
+  width: 100%;
+}</pre>
+            </div>
+
+            <h3>5. 常見版面結構</h3>
+            <p>網頁的基本結構通常包含以下部分：</p>
+            
+            <div class="demo-box">
+                <h4>網頁結構示意：</h4>
+                <div class="code-block">
+                    <pre>&lt;div id="wrap"&gt;
+  &lt;div id="header"&gt;頁首區塊&lt;/div&gt;
+  &lt;div id="nav"&gt;導航列&lt;/div&gt;
+  &lt;div id="content"&gt;
+    &lt;div id="left"&gt;左欄內容&lt;/div&gt;
+    &lt;div id="right"&gt;右欄內容&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id="footer"&gt;頁尾區塊&lt;/div&gt;
+&lt;/div&gt;</pre>
+                </div>
+            </div>
+            
+            <div class="code-block">
+                <pre>/* 對應的CSS樣式 */
+#wrap {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#header {
+  height: 100px;
+  background: #333;
+}
+
+#nav {
+  height: 50px;
+  background: #666;
+}
+
+#left {
+  width: 200px;
+  float: left;
+  background: #ccc;
+}
+
+#right {
+  width: 760px;
+  float: right;
+  background: #eee;
+}
+
+#footer {
+  clear: both;
+  height: 80px;
+  background: #999;
+}</pre>
+            </div>
+
+            <div class="info-box">
+                <h4>版面配置技巧總結：</h4>
+                <ul>
+                    <li><strong>水平置中</strong>：<code>margin: auto</code> 用於區塊，<code>text-align: center</code> 用於文字</li>
+                    <li><strong>浮動排版</strong>：<code>float: left/right</code> 創建多欄佈局</li>
+                    <li><strong>清除浮動</strong>：<code>clear: both</code> 恢復正常排版流</li>
+                    <li><strong>絕對定位</strong>：配合 <code>position: relative</code> 的父容器使用</li>
+                </ul>
+            </div>
+            
+            <p><strong>下一步：</strong> 掌握版面配置後，可以學習 <a href="effects.html">動態效果</a> 來為網頁增加互動性。</p>
+        </main>
+
+        <!-- 頁尾 -->
+        <footer class="footer">
+            <p>&copy; 2025 網頁設計課程筆記 | 基於 Notion 課堂筆記製作</p>
+        </footer>
+    </div>
+</body>
+</html>
