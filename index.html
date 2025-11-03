@@ -7,375 +7,123 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="wrap">
+    <div class="container">
         <!-- 頁首 -->
-        <div id="header">
-            <div id="logo">
-                <h1>📚 網頁設計課程筆記</h1>
-                <p>簡單的HTML & CSS學習資源</p>
-            </div>
-            <div id="menubox">
-                <ul>
-                    <li><a href="#overview">課程概覽</a></li>
-                    <li><a href="#html-basics">HTML基礎</a></li>
-                    <li><a href="#css-basics">CSS基礎</a></li>
-                    <li><a href="#layout">版面配置</a></li>
-                    <li><a href="#effects">動態效果</a></li>
-                    <li><a href="#examples">實作範例</a></li>
-                </ul>
-            </div>
-        </div>
+        <header class="header">
+            <h1>📚 網頁設計課程筆記</h1>
+            <p>簡單的HTML & CSS學習資源</p>
+        </header>
+
+        <!-- 導航列 -->
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html" class="active">課程總覽</a></li>
+                <li><a href="html-basics.html">HTML基礎</a></li>
+                <li><a href="css-basics.html">CSS基礎</a></li>
+                <li><a href="layout.html">版面配置</a></li>
+                <li><a href="effects.html">動態效果</a></li>
+                <li><a href="examples.html">實作範例</a></li>
+            </ul>
+        </nav>
 
         <!-- 主內容區 -->
-        <div id="content">
-            <!-- 課程概覽 -->
-            <section id="overview">
-                <h2>📅 課程概覽</h2>
-                <div class="week-grid">
-                    <div class="week-item">
-                        <h3>第1-2週</h3>
-                        <h4>HTML基礎</h4>
-                        <ul>
-                            <li>文字排版</li>
-                            <li>圖片嵌入</li>
-                            <li>清單運用</li>
-                            <li>超連結語法</li>
-                        </ul>
+        <main class="main">
+            <h2>📅 課程總覽</h2>
+            
+            <div class="week-grid">
+                <div class="week-card">
+                    <div class="week-number">第1-2週</div>
+                    <h3>HTML基礎</h3>
+                    <ul>
+                        <li>文字排版</li>
+                        <li>圖片嵌入</li>
+                        <li>清單運用</li>
+                        <li>超連結語法</li>
+                    </ul>
+                    <a href="html-basics.html" class="learn-btn">開始學習</a>
+                </div>
+
+                <div class="week-card">
+                    <div class="week-number">第3週</div>
+                    <h3>進階HTML</h3>
+                    <ul>
+                        <li>複雜的超連結</li>
+                        <li>圖文混排</li>
+                        <li>表格版面配置</li>
+                    </ul>
+                    <a href="html-basics.html" class="learn-btn">開始學習</a>
+                </div>
+
+                <div class="week-card">
+                    <div class="week-number">第4-5週</div>
+                    <h3>CSS基礎</h3>
+                    <ul>
+                        <li>CSS基本語法</li>
+                        <li>樣式表串接</li>
+                        <li>基本樣式調整</li>
+                    </ul>
+                    <a href="css-basics.html" class="learn-btn">開始學習</a>
+                </div>
+
+                <div class="week-card">
+                    <div class="week-number">第6週</div>
+                    <h3>版面配置</h3>
+                    <ul>
+                        <li>Div區塊定位</li>
+                        <li>版面配置技術</li>
+                    </ul>
+                    <a href="layout.html" class="learn-btn">開始學習</a>
+                </div>
+
+                <div class="week-card">
+                    <div class="week-number">第7週</div>
+                    <h3>多媒體整合</h3>
+                    <ul>
+                        <li>背景影像</li>
+                        <li>聲音、影片</li>
+                    </ul>
+                    <a href="effects.html" class="learn-btn">開始學習</a>
+                </div>
+
+                <div class="week-card">
+                    <div class="week-number">第8週</div>
+                    <h3>動態效果</h3>
+                    <ul>
+                        <li>CSS動態效果</li>
+                        <li>過場動畫</li>
+                        <li>互動式元件</li>
+                    </ul>
+                    <a href="effects.html" class="learn-btn">開始學習</a>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <h3>💡 學習重點</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <h4>HTML核心</h4>
+                        <p>語意化標籤、屬性應用、巢狀結構</p>
                     </div>
-                    <div class="week-item">
-                        <h3>第3週</h3>
-                        <h4>進階HTML</h4>
-                        <ul>
-                            <li>複雜的超連結</li>
-                            <li>圖文混排</li>
-                            <li>表格版面配置</li>
-                        </ul>
+                    <div class="summary-item">
+                        <h4>CSS核心</h4>
+                        <p>選取器優先級、盒模型、浮動與定位</p>
                     </div>
-                    <div class="week-item">
-                        <h3>第4-5週</h3>
-                        <h4>CSS基礎</h4>
-                        <ul>
-                            <li>CSS基本語法</li>
-                            <li>樣式表串接</li>
-                            <li>基本樣式調整</li>
-                        </ul>
+                    <div class="summary-item">
+                        <h4>版面技巧</h4>
+                        <p>水平置中、浮動排版、清除浮動</p>
                     </div>
-                    <div class="week-item">
-                        <h3>第6週</h3>
-                        <h4>版面配置</h4>
-                        <ul>
-                            <li>Div區塊定位</li>
-                            <li>版面配置技術</li>
-                        </ul>
-                    </div>
-                    <div class="week-item">
-                        <h3>第7週</h3>
-                        <h4>多媒體整合</h4>
-                        <ul>
-                            <li>背景影像</li>
-                            <li>聲音、影片</li>
-                        </ul>
-                    </div>
-                    <div class="week-item">
-                        <h3>第8週</h3>
+                    <div class="summary-item">
                         <h4>動態效果</h4>
-                        <ul>
-                            <li>CSS動態效果</li>
-                            <li>過場動畫</li>
-                            <li>互動式元件</li>
-                        </ul>
+                        <p>Transition、Transform、互動設計</p>
                     </div>
                 </div>
-            </section>
-
-            <!-- HTML基礎 -->
-            <section id="html-basics">
-                <h2>📝 HTML基礎技術</h2>
-                
-                <div class="topic-section">
-                    <h3>1. 圖片嵌入 (<code>&lt;img&gt;</code>)</h3>
-                    <div class="code-example">
-                        <pre><code>&lt;img src="images/logo.png" alt="網站Logo" width="960"&gt;</code></pre>
-                    </div>
-                    <div class="explanation">
-                        <ul>
-                            <li><strong>src</strong>: 指定圖片來源路徑</li>
-                            <li><strong>alt</strong>: 圖片替代文字，有助於SEO</li>
-                            <li><strong>width</strong>: 設定圖片寬度</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="topic-section">
-                    <h3>2. 超連結 (<code>&lt;a&gt;</code>)</h3>
-                    <div class="code-example">
-                        <pre><code>&lt;!-- 基本連結 --&gt;
-&lt;a href="test.html"&gt;連結文字&lt;/a&gt;
-
-&lt;!-- 圖片連結 --&gt;
-&lt;a href="test.html"&gt;
-  &lt;img src="images/logo.png" alt="網站Logo"&gt;
-&lt;/a&gt;
-
-&lt;!-- 新視窗開啟 --&gt;
-&lt;a href="test.html" target="_blank"&gt;新視窗連結&lt;/a&gt;</code></pre>
-                    </div>
-                </div>
-
-                <div class="topic-section">
-                    <h3>3. 清單與導航列</h3>
-                    <div class="code-example">
-                        <pre><code>&lt;div align="center"&gt;
-  &lt;ul&gt;
-    &lt;li style="display: inline;"&gt;
-      &lt;a href="#"&gt;&lt;img src="images/nav/關於我們.png" alt="關於我們"&gt;&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li style="display: inline;"&gt;
-      &lt;a href="#"&gt;&lt;img src="images/nav/最新消息.png" alt="最新消息"&gt;&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CSS基礎 -->
-            <section id="css-basics">
-                <h2>🎨 CSS樣式技術</h2>
-                
-                <div class="topic-section">
-                    <h3>1. CSS引入方式比較</h3>
-                    <table class="comparison-table">
-                        <tr>
-                            <th>方式</th>
-                            <th>語法</th>
-                            <th>優點</th>
-                            <th>缺點</th>
-                            <th>適用場合</th>
-                        </tr>
-                        <tr>
-                            <td><strong>行內樣式</strong></td>
-                            <td><code>&lt;div style="width: 960px;"&gt;</code></td>
-                            <td>優先權高、測試方便</td>
-                            <td>維護性極差</td>
-                            <td>測試用途</td>
-                        </tr>
-                        <tr>
-                            <td><strong>嵌入式</strong></td>
-                            <td><code>&lt;style&gt; div { width: 960px; } &lt;/style&gt;</code></td>
-                            <td>單頁面集中管理</td>
-                            <td>無法跨頁面共用</td>
-                            <td>單頁應用</td>
-                        </tr>
-                        <tr class="highlight">
-                            <td><strong>外部樣式表</strong></td>
-                            <td><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></td>
-                            <td>整站集中管理</td>
-                            <td>需額外檔案</td>
-                            <td><strong>業界標準</strong></td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="topic-section">
-                    <h3>2. 選取器類型</h3>
-                    <div class="code-example">
-                        <pre><code>/* 標籤選取器 */
-p { color: blue; }
-
-/* Class選取器 */
-.box { width: 200px; }
-
-/* ID選取器 */
-#header { height: 100px; }
-
-/* 後代選取器 */
-.box p { margin: 10px; }
-
-/* 子代選取器 */
-.box &gt; p { padding: 5px; }</code></pre>
-                    </div>
-                </div>
-
-                <div class="priority-box">
-                    <h4>優先級順序：</h4>
-                    <ol>
-                        <li><code>!important</code> 規則</li>
-                        <li>行內樣式 (<code>style</code> 屬性)</li>
-                        <li>ID選取器 (<code>#id</code>)</li>
-                        <li>Class選取器 (<code>.class</code>)</li>
-                        <li>標籤選取器 (<code>tag</code>)</li>
-                        <li>瀏覽器預設樣式</li>
-                    </ol>
-                </div>
-            </section>
-
-            <!-- 版面配置 -->
-            <section id="layout">
-                <h2>📀 版面配置技術</h2>
-                
-                <div class="topic-section">
-                    <h3>1. 區塊置中</h3>
-                    <div class="code-example">
-                        <pre><code>#main {
-  width: 800px;
-  margin: auto; /* 水平置中 */
-}</code></pre>
-                    </div>
-                </div>
-
-                <div class="topic-section">
-                    <h3>2. 浮動排版</h3>
-                    <div class="code-example">
-                        <pre><code>.item {
-  width: 180px;
-  height: 180px;
-  float: left;
-  margin: 10px;
-}
-
-/* 清除浮動 */
-.clear {
-  clear: both;
-}</code></pre>
-                    </div>
-                </div>
-
-                <div class="demo-box">
-                    <h4>版面配置示意圖：</h4>
-                    <div class="layout-demo">
-                        <div class="demo-header">頁首 (Header)</div>
-                        <div class="demo-nav">導航列 (Navigation)</div>
-                        <div class="demo-content">
-                            <div class="demo-left">左欄 (Sidebar)</div>
-                            <div class="demo-main">主內容 (Main Content)</div>
-                        </div>
-                        <div class="demo-footer">頁尾 (Footer)</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 動態效果 -->
-            <section id="effects">
-                <h2>⚡ CSS動態效果</h2>
-                
-                <div class="topic-section">
-                    <h3>1. 轉場效果 (Transition)</h3>
-                    <div class="code-example">
-                        <pre><code>.hover-demo {
-  width: 200px;
-  height: 100px;
-  background: #3498db;
-  transition: all 0.3s ease;
-}
-
-.hover-demo:hover {
-  width: 250px;
-  height: 120px;
-  background: #e74c3c;
-}</code></pre>
-                    </div>
-                    <div class="hover-demo">滑鼠移入看效果</div>
-                </div>
-
-                <div class="topic-section">
-                    <h3>2. 2D變形 (Transform)</h3>
-                    <div class="code-example">
-                        <pre><code>.transform-demo {
-  transform: scale(1.2);           /* 縮放 */
-  transform: rotate(45deg);        /* 旋轉 */
-  transform: translate(50px, 50px); /* 移動 */
-}</code></pre>
-                    </div>
-                    <div class="transform-examples">
-                        <div class="transform-item scale-demo">縮放</div>
-                        <div class="transform-item rotate-demo">旋轉</div>
-                        <div class="transform-item translate-demo">移動</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 實作範例 -->
-            <section id="examples">
-                <h2>🎯 實作範例</h2>
-                
-                <div class="example-section">
-                    <h3>房型介紹頁面</h3>
-                    <div class="example-demo">
-                        <h4 style="text-align: center;">房型介紹</h4>
-                        <div class="room-grid">
-                            <div class="room-item">
-                                <div class="room-image">圖片</div>
-                                <p class="room-text">
-                                    雙人房<br>
-                                    NT$ <span class="price">2400</span>
-                                </p>
-                            </div>
-                            <div class="room-item">
-                                <div class="room-image">圖片</div>
-                                <p class="room-text">
-                                    四人房<br>
-                                    NT$ <span class="price">3600</span>
-                                </p>
-                            </div>
-                            <div class="room-item">
-                                <div class="room-image">圖片</div>
-                                <p class="room-text">
-                                    豪華套房<br>
-                                    NT$ <span class="price">5200</span>
-                                </p>
-                            </div>
-                        </div>
-                        <p style="text-align: center; margin-top: 15px;">
-                            聯絡電話：(02)1234-5678
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </div>
+            </div>
+        </main>
 
         <!-- 頁尾 -->
-        <div id="footer">
-            <p>&copy; 2025 網頁設計課程筆記 | 基於 Notion 課堂筆記製作 | <a href="https://github.com/xiyu-emma/web-design-study-notes" target="_blank">GitHub 專案</a></p>
-        </div>
+        <footer class="footer">
+            <p>&copy; 2025 網頁設計課程筆記 | 基於 Notion 課堂筆記製作</p>
+        </footer>
     </div>
-
-    <script>
-        // 平滑滾動功能
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // 高亮當前節區
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('#menubox a');
-            
-            let currentSection = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 100)) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + currentSection) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
