@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>實作範例 - 網頁設計課程筆記</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 範例專用樣式 */
+        .room-demo {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .room-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .room-item {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .room-item:hover {
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .room-image {
+            width: 100%;
+            height: 80px;
+            background: #bdc3c7;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .room-text {
+            font-size: 0.9em;
+            line-height: 1.4;
+            margin: 0;
+        }
+        
+        .price {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .layout-example {
+            background: #f0f0f0;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .example-header {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .example-nav {
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .example-content {
+            display: flex;
+            min-height: 150px;
+        }
+        
+        .example-left {
+            background: #ecf0f1;
+            width: 30%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .example-main {
+            background: white;
+            width: 70%;
+            padding: 15px;
+        }
+        
+        .example-footer {
+            background: #95a5a6;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 頁首 -->
+        <header class="header">
+            <h1>🎯 實作範例</h1>
+            <p>完整的網頁實作範例和應用</p>
+        </header>
+
+        <!-- 導航列 -->
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">課程總覽</a></li>
+                <li><a href="html-basics.html">HTML基礎</a></li>
+                <li><a href="css-basics.html">CSS基礎</a></li>
+                <li><a href="layout.html">版面配置</a></li>
+                <li><a href="effects.html">動態效果</a></li>
+                <li><a href="examples.html" class="active">實作範例</a></li>
+            </ul>
+        </nav>
+
+        <!-- 主內容區 -->
+        <main class="content">
+            <h2>實作範例</h2>
+            
+            <h3>1. 房型介紹頁面</h3>
+            <p>這是一個經典的商業網站範例，使用了網格布局和卡片設計。</p>
+            
+            <div class="room-demo">
+                <h4 style="text-align: center; margin-bottom: 20px;">房型介紹</h4>
+                <div class="room-grid">
+                    <div class="room-item">
+                        <div class="room-image">圖片</div>
+                        <p class="room-text">
+                            雙人房<br>
+                            NT$ <span class="price">2400</span>
+                        </p>
+                    </div>
+                    <div class="room-item">
+                        <div class="room-image">圖片</div>
+                        <p class="room-text">
+                            四人房<br>
+                            NT$ <span class="price">3600</span>
+                        </p>
+                    </div>
+                    <div class="room-item">
+                        <div class="room-image">圖片</div>
+                        <p class="room-text">
+                            豪華套房<br>
+                            NT$ <span class="price">5200</span>
+                        </p>
+                    </div>
+                    <div class="room-item">
+                        <div class="room-image">圖片</div>
+                        <p class="room-text">
+                            家庭房<br>
+                            NT$ <span class="price">4800</span>
+                        </p>
+                    </div>
+                    <div class="room-item">
+                        <div class="room-image">圖片</div>
+                        <p class="room-text">
+                            商務套房<br>
+                            NT$ <span class="price">6800</span>
+                        </p>
+                    </div>
+                    <div class="room-item">
+                        <div class="room-image">圖片</div>
+                        <p class="room-text">
+                            總統套房<br>
+                            NT$ <span class="price">9800</span>
+                        </p>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 15px; font-weight: bold;">
+                    聯絡電話：(02)1234-5678
+                </p>
+            </div>
+            
+            <h4>HTML 結構：</h4>
+            <div class="code-block">
+                <pre>&lt;h2 style="text-align: center;"&gt;房型介紹&lt;/h2&gt;
+
+&lt;div id="main"&gt;
+  &lt;div class="item"&gt;
+    &lt;img src="images/pic_01.jpg" alt=""&gt;
+    &lt;p class="item_txt"&gt;
+      雙人房&lt;br&gt;
+      NT$ &lt;span class="red"&gt;2400&lt;/span&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;!-- 重複 5 次 --&gt;
+  
+  &lt;div style="clear: both;"&gt;&lt;/div&gt;
+  &lt;p style="text-align: center;"&gt;
+    聯絡電話：(02)1234-5678
+  &lt;/p&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <h3>2. 完整網站版面</h3>
+            <p>經典的網站版面結構，包含頁首、導航、內容和頁尾。</p>
+            
+            <div class="layout-example">
+                <div class="example-header">頁首區域 (Header)</div>
+                <div class="example-nav">導航列 (Navigation)</div>
+                <div class="example-content">
+                    <div class="example-left">左側選單<br>(Sidebar)</div>
+                    <div class="example-main">
+                        <h4>主內容區域 (Main Content)</h4>
+                        <p>這裡是網頁的主要內容區域，可以放置文字、圖片、表格等各種元素。</p>
+                    </div>
+                </div>
+                <div class="example-footer">頁尾區域 (Footer)</div>
+            </div>
+            
+            <h4>HTML 結構：</h4>
+            <div class="code-block">
+                <pre>&lt;div id="wrap"&gt;
+  &lt;div id="header"&gt;
+    &lt;div id="logo"&gt;Logo區塊&lt;/div&gt;
+    &lt;div id="menubox"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;首頁&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;關於我們&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;服務項目&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;聯絡我們&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div id="banner"&gt;
+    &lt;img src="banner.jpg" alt="橫幅圖片"&gt;
+  &lt;/div&gt;
+  
+  &lt;div id="content"&gt;
+    &lt;div id="left"&gt;左欄內容&lt;/div&gt;
+    &lt;div id="right"&gt;右欄內容&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div id="footer"&gt;
+    &lt;p&gt;版權資訊&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+            
+            <h4>CSS 樣式：</h4>
+            <div class="code-block">
+                <pre>#wrap {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#header {
+  height: 100px;
+  background: #333;
+  color: white;
+}
+
+#banner {
+  width: 100%;
+  overflow: hidden;
+}
+
+#banner img {
+  width: 100%;
+}
+
+#content {
+  display: flex;
+  min-height: 400px;
+}
+
+#left {
+  width: 200px;
+  background: #f0f0f0;
+  padding: 20px;
+}
+
+#right {
+  flex: 1;
+  background: white;
+  padding: 20px;
+}
+
+#footer {
+  background: #666;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}</pre>
+            </div>
+
+            <h3>3. 學習重點總結</h3>
+            
+            <div class="success-box">
+                <h4>通過這些範例，您已經學會了：</h4>
+                <ul>
+                    <li><strong>HTML結構</strong>：如何使用語意化標籤建立網頁結構</li>
+                    <li><strong>CSS樣式</strong>：如何使用選取器和屬性美化網頁</li>
+                    <li><strong>版面配置</strong>：如何使用浮動、定位建立複雜布局</li>
+                    <li><strong>動態效果</strong>：如何增加互動性和視覺吸引力</li>
+                </ul>
+            </div>
+            
+            <div class="info-box">
+                <h4>繼續學習建議：</h4>
+                <ul>
+                    <li>嘗試修改這些範例的顏色、字體和尺寸</li>
+                    <li>增加更多的內容和功能</li>
+                    <li>學習現代CSS技術：Flexbox和Grid</li>
+                    <li>了解響應式設計原則</li>
+                </ul>
+            </div>
+            
+            <p><strong>恭喜！</strong> 您已經完成了網頁設計的基礎學習。現在可以回到 <a href="index.html">課程總覽</a> 複習其他章節，或者開始創建您自己的網站專案！</p>
+        </main>
+
+        <!-- 頁尾 -->
+        <footer class="footer">
+            <p>&copy; 2025 網頁設計課程筆記 | 基於 Notion 課堂筆記製作</p>
+        </footer>
+    </div>
+</body>
+</html>
