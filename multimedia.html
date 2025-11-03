@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多媒體整合 - 網頁設計課程筆記</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 背景示範專用樣式 */
+        .bg-demo {
+            width: 100%;
+            height: 200px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-bg-demo {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100%" height="100%" fill="%2334495e"/><text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="white" font-family="Arial" font-size="12">示範圖片</text></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .video-bg-demo {
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .video-bg-demo::before {
+            content: "▶";
+            font-size: 2em;
+            margin-right: 10px;
+        }
+        
+        .pattern-bg-demo {
+            background-image: 
+                repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, white 10px, white 20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 頁首 -->
+        <header class="header">
+            <h1>🎬 多媒體整合</h1>
+            <p>學習如何在網頁中使用圖片和影片背景</p>
+        </header>
+
+        <!-- 導航列 -->
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">課程總覽</a></li>
+                <li><a href="html-basics.html">HTML基礎</a></li>
+                <li><a href="css-basics.html">CSS基礎</a></li>
+                <li><a href="layout.html">版面配置</a></li>
+                <li><a href="multimedia.html" class="active">多媒體整合</a></li>
+                <li><a href="effects.html">動態效果</a></li>
+                <li><a href="examples.html">實作範例</a></li>
+            </ul>
+        </nav>
+
+        <!-- 主內容區 -->
+        <main class="content">
+            <h2>多媒體背景設定</h2>
+            
+            <h3>1. 圖片背景設定</h3>
+            <p>使用 CSS 的 <code>background-image</code> 屬性可以為網頁元素設定背景圖片。</p>
+            
+            <h4>基本語法</h4>
+            <div class="code-block">
+                <pre>div {
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}</pre>
+            </div>
+            
+            <div class="demo-box">
+                <h4>背景圖片效果示範：</h4>
+                <div class="bg-demo image-bg-demo">
+                    背景圖片示範區域
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <h4>背景圖片屬性說明：</h4>
+                <ul>
+                    <li><code>background-image</code>：指定背景圖片的路徑</li>
+                    <li><code>background-size</code>：控制圖片大小
+                        <ul>
+                            <li><code>cover</code>：覆蓋整個區域，保持比例</li>
+                            <li><code>contain</code>：完整顯示圖片，保持比例</li>
+                            <li><code>100% 100%</code>：拉伸至完全填滿</li>
+                        </ul>
+                    </li>
+                    <li><code>background-position</code>：圖片位置（center、top、bottom等）</li>
+                    <li><code>background-repeat</code>：是否重複顯示</li>
+                </ul>
+            </div>
+
+            <h3>2. 全頁面背景圖片</h3>
+            <p>為整個網頁設定背景圖片，創造更豐富的視覺體驗。</p>
+            
+            <div class="code-block">
+                <pre>body {
+  background-image: url('images/page-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* 固定背景 */
+}</pre>
+            </div>
+            
+            <div class="success-box">
+                <h4>最佳實踐建議：</h4>
+                <ul>
+                    <li>選擇高解析度但檔案大小適中的圖片</li>
+                    <li>確保背景不會影響文字的可讀性</li>
+                    <li>考慮使用半透明遮罩提高對比度</li>
+                    <li>測試在不同螢幕尺寸下的效果</li>
+                </ul>
+            </div>
+
+            <h3>3. 影片背景設定</h3>
+            <p>HTML5 的 <code>&lt;video&gt;</code> 標籤搭配 CSS 定位，可以創造動態的影片背景效果。</p>
+            
+            <h4>HTML 結構</h4>
+            <div class="code-block">
+                <pre>&lt;div class="video-background"&gt;
+  &lt;video autoplay muted loop&gt;
+    &lt;source src="background-video.mp4" type="video/mp4"&gt;
+    &lt;source src="background-video.webm" type="video/webm"&gt;
+    您的瀏覽器不支援影片標籤。
+  &lt;/video&gt;
+  
+  &lt;div class="content-overlay"&gt;
+    &lt;h1&gt;網站標題&lt;/h1&gt;
+    &lt;p&gt;在影片背景上的內容&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+            
+            <h4>CSS 樣式</h4>
+            <div class="code-block">
+                <pre>.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* 全螢幕高度 */
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 保持比例覆蓋 */
+  z-index: -1; /* 置於背景層 */
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+  text-align: center;
+  background: rgba(0,0,0,0.3); /* 半透明遮罩 */
+}</pre>
+            </div>
+            
+            <div class="demo-box">
+                <h4>影片背景效果示範：</h4>
+                <div class="bg-demo video-bg-demo">
+                    影片背景示範區域（模擬效果）
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <h4>影片背景注意事項：</h4>
+                <ul>
+                    <li><strong>檔案大小</strong>：影片檔案通常較大，注意載入速度</li>
+                    <li><strong>自動播放</strong>：需要加上 <code>muted</code> 屬性才能自動播放</li>
+                    <li><strong>多格式支援</strong>：提供多種格式確保相容性</li>
+                    <li><strong>行動裝置</strong>：某些行動裝置可能不支援自動播放</li>
+                </ul>
+            </div>
+
+            <h3>4. 圖案背景 (CSS Pattern)</h3>
+            <p>使用 CSS 漸層和重複功能，可以創造各種圖案背景效果。</p>
+            
+            <div class="code-block">
+                <pre>/* 條紋圖案 */
+.stripe-bg {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #f0f0f0,
+    #f0f0f0 10px,
+    white 10px,
+    white 20px
+  );
+}
+
+/* 點狀圖案 */
+.dot-bg {
+  background-image: radial-gradient(circle, #333 2px, transparent 2px);
+  background-size: 20px 20px;
+}
+
+/* 格線圖案 */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}</pre>
+            </div>
+            
+            <div class="demo-box">
+                <h4>圖案背景效果示範：</h4>
+                <div class="bg-demo pattern-bg-demo">
+                    CSS 圖案背景示範
+                </div>
+            </div>
+
+            <h3>5. 背景組合技巧</h3>
+            <p>可以同時使用多種背景效果，創造層次豐富的視覺效果。</p>
+            
+            <div class="code-block">
+                <pre>.complex-bg {
+  /* 多重背景 */
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* 遮罩層 */
+    url('overlay-pattern.png'),                          /* 圖案層 */
+    url('main-background.jpg');                          /* 主背景 */
+    
+  background-size: 
+    cover,        /* 遮罩層 */
+    50px 50px,    /* 圖案層 */
+    cover;        /* 主背景 */
+    
+  background-position: center, center, center;
+  background-repeat: no-repeat, repeat, no-repeat;
+}</pre>
+            </div>
+            
+            <div class="info-box">
+                <h4>背景層次順序：</h4>
+                <ol>
+                    <li>最上層：遮罩或裝飾圖案</li>
+                    <li>中間層：紋理或圖案</li>
+                    <li>最底層：主要背景圖片</li>
+                </ol>
+                <p>CSS 中先寫的背景會顯示在上層。</p>
+            </div>
+
+            <h3>6. 實用範例</h3>
+            
+            <div class="demo-box">
+                <h4>英雄區塊（Hero Section）範例：</h4>
+                <div class="code-block">
+                    <pre>&lt;div class="hero-section"&gt;
+  &lt;h1&gt;歡迎來到我的網站&lt;/h1&gt;
+  &lt;p&gt;這裡有美麗的背景圖片&lt;/p&gt;
+  &lt;button&gt;開始探索&lt;/button&gt;
+&lt;/div&gt;</pre>
+                </div>
+                
+                <div class="code-block">
+                    <pre>.hero-section {
+  height: 100vh;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}</pre>
+                </div>
+            </div>
+            
+            <div class="success-box">
+                <h4>學習重點總結：</h4>
+                <ul>
+                    <li><strong>圖片背景</strong>：使用 <code>background-image</code> 和相關屬性</li>
+                    <li><strong>影片背景</strong>：結合 HTML5 video 標籤和 CSS 定位</li>
+                    <li><strong>多重背景</strong>：創造豐富的視覺層次</li>
+                    <li><strong>效能考量</strong>：注意檔案大小和載入速度</li>
+                </ul>
+            </div>
+            
+            <p><strong>下一步：</strong> 掌握多媒體背景後，可以學習 <a href="effects.html">動態效果</a> 來為背景添加更多互動性。</p>
+        </main>
+
+        <!-- 頁尾 -->
+        <footer class="footer">
+            <p>&copy; 2025 網頁設計課程筆記 | 基於 Notion 課堂筆記製作</p>
+        </footer>
+    </div>
+</body>
+</html>
