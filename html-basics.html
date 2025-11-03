@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML基礎 - 網頁設計課程筆記</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 頁首 -->
+        <header class="header">
+            <h1>📝 HTML基礎技術</h1>
+            <p>學習HTML標籤的基本使用方法</p>
+        </header>
+
+        <!-- 導航列 -->
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">課程總覽</a></li>
+                <li><a href="html-basics.html" class="active">HTML基礎</a></li>
+                <li><a href="css-basics.html">CSS基礎</a></li>
+                <li><a href="layout.html">版面配置</a></li>
+                <li><a href="effects.html">動態效果</a></li>
+                <li><a href="examples.html">實作範例</a></li>
+            </ul>
+        </nav>
+
+        <!-- 主內容區 -->
+        <main class="content">
+            <h2>HTML基礎技術</h2>
+            
+            <h3>1. 圖片嵌入 (&lt;img&gt;)</h3>
+            <p>在網頁中嵌入圖片是最基本的技能之一。</p>
+            
+            <div class="code-block">
+                <pre>&lt;img src="images/logo.png" alt="網站Logo" width="960"&gt;</pre>
+            </div>
+            
+            <div class="info-box">
+                <h4>重要屬性說明：</h4>
+                <ul>
+                    <li><strong>src</strong> (Source)：指定圖片來源路徑</li>
+                    <li><strong>alt</strong> (Alternative Text)：圖片替代文字，有助於SEO和無障礙閱讀</li>
+                    <li><strong>width</strong>：設定圖片寬度（建議改用CSS）</li>
+                </ul>
+            </div>
+
+            <h3>2. 超連結 (&lt;a&gt;)</h3>
+            <p>超連結是網頁之間連接的橋梁，可以連結到其他頁面或網站。</p>
+            
+            <h4>基本連結</h4>
+            <div class="code-block">
+                <pre>&lt;a href="test.html"&gt;連結文字&lt;/a&gt;</pre>
+            </div>
+            
+            <h4>圖片連結</h4>
+            <div class="code-block">
+                <pre>&lt;a href="test.html"&gt;
+  &lt;img src="images/logo.png" alt="網站Logo"&gt;
+&lt;/a&gt;</pre>
+            </div>
+            
+            <h4>新視窗開啟</h4>
+            <div class="code-block">
+                <pre>&lt;a href="test.html" target="_blank"&gt;新視窗連結&lt;/a&gt;</pre>
+            </div>
+
+            <h3>3. 清單與導航列</h3>
+            <p>清單是組織內容的重要元素，常用於建立導航列。</p>
+            
+            <div class="code-block">
+                <pre>&lt;div align="center"&gt;
+  &lt;ul&gt;
+    &lt;li style="display: inline;"&gt;
+      &lt;a href="#"&gt;&lt;img src="images/nav/關於我們.png" alt="關於我們"&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li style="display: inline;"&gt;
+      &lt;a href="#"&gt;&lt;img src="images/nav/最新消息.png" alt="最新消息"&gt;&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+            </div>
+            
+            <div class="success-box">
+                <h4>小訣竅：</h4>
+                <p>使用 <code>display: inline;</code> 可以讓清單項目水平排列，適合製作導航列。</p>
+            </div>
+
+            <h3>4. 表格版面配置</h3>
+            <p>在CSS普及之前，表格是主要的版面配置工具。</p>
+            
+            <div class="code-block">
+                <pre>&lt;table border="1" align="center"&gt;
+  &lt;tr&gt;
+    &lt;td align="center" valign="top"&gt;儲存格內容&lt;/td&gt;
+    &lt;td&gt;
+      &lt;!-- 巢狀表格 --&gt;
+      &lt;table border="1"&gt;
+        &lt;tr&gt;&lt;td&gt;內部表格內容&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+            </div>
+            
+            <div class="warning-box">
+                <h4>注意：</h4>
+                <p>現代網頁設計不建議使用表格做版面配置，應該使用CSS的Flexbox或Grid。</p>
+            </div>
+
+            <h3>重要觀念總結</h3>
+            
+            <div class="demo-box">
+                <h4>HTML核心概念：</h4>
+                <ul>
+                    <li><strong>語意化標籤</strong>：使用適當的HTML標籤表達內容結構</li>
+                    <li><strong>屬性應用</strong>：掌握各標籤的重要屬性</li>
+                    <li><strong>巢狀結構</strong>：理解元素包含關係</li>
+                </ul>
+            </div>
+            
+            <p><strong>下一步：</strong> 學會了HTML基礎後，可以繼續學習 <a href="css-basics.html">CSS基礎</a> 來美化網頁外觀。</p>
+        </main>
+
+        <!-- 頁尾 -->
+        <footer class="footer">
+            <p>&copy; 2025 網頁設計課程筆記 | 基於 Notion 課堂筆記製作</p>
+        </footer>
+    </div>
+</body>
+</html>
