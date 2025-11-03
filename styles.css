@@ -12,22 +12,22 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
+    color: #2d2d2d;
+    background-color: #e8e3d3;
 }
 
 /* 主容器 */
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    background: white;
+    background: #dfd9c7;
     min-height: 100vh;
 }
 
 /* 頁首 */
 .header {
-    background: #2c3e50;
-    color: white;
+    background: #1a2b39;
+    color: #dfd9c7;
     text-align: center;
     padding: 40px 20px;
 }
@@ -44,7 +44,7 @@ body {
 
 /* 導航列 */
 .nav {
-    background: #34495e;
+    background: #7b2227;
     padding: 0;
 }
 
@@ -62,15 +62,15 @@ body {
 .nav a {
     display: block;
     padding: 15px 20px;
-    color: white;
+    color: #dfd9c7;
     text-decoration: none;
     border-bottom: 3px solid transparent;
 }
 
 .nav a:hover,
 .nav a.active {
-    background: #2c3e50;
-    border-bottom-color: #3498db;
+    background: #5f1a1d;
+    border-bottom-color: #ba6f4d;
 }
 
 /* 主內容區 */
@@ -80,10 +80,10 @@ body {
 
 .main h2 {
     font-size: 2em;
-    color: #2c3e50;
+    color: #1a2b39;
     margin-bottom: 30px;
     text-align: center;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid #7b2227;
     padding-bottom: 10px;
 }
 
@@ -96,21 +96,21 @@ body {
 }
 
 .week-card {
-    background: white;
-    border: 1px solid #ddd;
+    background: #f5f1e6;
+    border: 1px solid #c4b8a0;
     border-radius: 8px;
     padding: 25px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(26,43,57,0.1);
 }
 
 .week-card:hover {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(123,34,39,0.2);
 }
 
 .week-number {
-    background: #3498db;
-    color: white;
+    background: #7b2227;
+    color: #dfd9c7;
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.9em;
@@ -120,7 +120,7 @@ body {
 }
 
 .week-card h3 {
-    color: #2c3e50;
+    color: #1a2b39;
     font-size: 1.3em;
     margin-bottom: 15px;
 }
@@ -133,14 +133,14 @@ body {
 
 .week-card li {
     padding: 5px 0;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #e8e3d3;
     position: relative;
     padding-left: 20px;
 }
 
 .week-card li:before {
     content: '•';
-    color: #3498db;
+    color: #7b2227;
     position: absolute;
     left: 0;
 }
@@ -152,8 +152,8 @@ body {
 /* 學習按鈕 */
 .learn-btn {
     display: inline-block;
-    background: #3498db;
-    color: white;
+    background: #7b2227;
+    color: #dfd9c7;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -161,19 +161,19 @@ body {
 }
 
 .learn-btn:hover {
-    background: #2980b9;
+    background: #5f1a1d;
 }
 
 /* 總結方塊 */
 .summary-box {
-    background: #ecf0f1;
+    background: #cfc9b3;
     padding: 30px;
     border-radius: 8px;
     margin-top: 40px;
 }
 
 .summary-box h3 {
-    color: #2c3e50;
+    color: #1a2b39;
     font-size: 1.5em;
     margin-bottom: 20px;
     text-align: center;
@@ -186,20 +186,20 @@ body {
 }
 
 .summary-item {
-    background: white;
+    background: #f5f1e6;
     padding: 20px;
     border-radius: 6px;
     text-align: center;
-    border-left: 4px solid #3498db;
+    border-left: 4px solid #7b2227;
 }
 
 .summary-item h4 {
-    color: #2c3e50;
+    color: #1a2b39;
     margin-bottom: 10px;
 }
 
 .summary-item p {
-    color: #666;
+    color: #5b6a5d;
     font-size: 0.9em;
 }
 
@@ -209,22 +209,22 @@ body {
 }
 
 .content h2 {
-    color: #2c3e50;
+    color: #1a2b39;
     font-size: 2em;
     margin-bottom: 30px;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid #7b2227;
     padding-bottom: 10px;
 }
 
 .content h3 {
-    color: #2c3e50;
+    color: #1a2b39;
     font-size: 1.4em;
     margin-top: 30px;
     margin-bottom: 15px;
 }
 
 .content h4 {
-    color: #34495e;
+    color: #5b6a5d;
     font-size: 1.2em;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -232,8 +232,8 @@ body {
 
 /* 程式碼區塊 */
 .code-block {
-    background: #2c3e50;
-    color: #ecf0f1;
+    background: #1a2b39;
+    color: #dfd9c7;
     padding: 20px;
     border-radius: 5px;
     margin: 15px 0;
@@ -248,12 +248,12 @@ body {
 }
 
 code {
-    background: #ecf0f1;
+    background: #cfc9b3;
     padding: 2px 5px;
     border-radius: 3px;
     font-family: 'Consolas', 'Monaco', monospace;
     font-size: 0.9em;
-    color: #e74c3c;
+    color: #7b2227;
 }
 
 /* 表格 */
@@ -261,45 +261,45 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    background: white;
+    background: #f5f1e6;
 }
 
 th, td {
     padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #c4b8a0;
 }
 
 th {
-    background: #3498db;
-    color: white;
+    background: #7b2227;
+    color: #dfd9c7;
     font-weight: bold;
 }
 
 tr:nth-child(even) {
-    background: #f9f9f9;
+    background: #ebe6d8;
 }
 
 /* 說明方塊 */
 .info-box {
-    background: #e8f4fd;
-    border-left: 4px solid #3498db;
+    background: #e5e9ec;
+    border-left: 4px solid #1a2b39;
     padding: 20px;
     margin: 20px 0;
     border-radius: 0 5px 5px 0;
 }
 
 .warning-box {
-    background: #fdf2e8;
-    border-left: 4px solid #f39c12;
+    background: #f5e8db;
+    border-left: 4px solid #ba6f4d;
     padding: 20px;
     margin: 20px 0;
     border-radius: 0 5px 5px 0;
 }
 
 .success-box {
-    background: #e8f5e8;
-    border-left: 4px solid #27ae60;
+    background: #e5ebe6;
+    border-left: 4px solid #5b6a5d;
     padding: 20px;
     margin: 20px 0;
     border-radius: 0 5px 5px 0;
@@ -307,8 +307,8 @@ tr:nth-child(even) {
 
 /* 示範方塊 */
 .demo-box {
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
+    background: #ebe6d8;
+    border: 1px solid #c4b8a0;
     padding: 20px;
     margin: 20px 0;
     border-radius: 5px;
@@ -316,7 +316,7 @@ tr:nth-child(even) {
 
 .demo-box h4 {
     margin-top: 0;
-    color: #495057;
+    color: #1a2b39;
 }
 
 /* 列表樣式 */
@@ -331,7 +331,7 @@ li {
 
 /* 連結樣式 */
 a {
-    color: #3498db;
+    color: #7b2227;
     text-decoration: none;
 }
 
@@ -341,8 +341,8 @@ a:hover {
 
 /* 頁尾 */
 .footer {
-    background: #2c3e50;
-    color: white;
+    background: #1a2b39;
+    color: #dfd9c7;
     text-align: center;
     padding: 20px;
     margin-top: auto;
@@ -377,7 +377,7 @@ a:hover {
     
     .nav a {
         padding: 12px 15px;
-        border-bottom: 1px solid #2c3e50;
+        border-bottom: 1px solid #5f1a1d;
     }
     
     .week-grid {
